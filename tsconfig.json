@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "build",
+    "public",
+    "node_modules",
+    "path/to/http-errors"
+  ],
+  "types": [
+    "node",
+    "jest",
+    "@testing-library/jest-dom"
+  ],
+}

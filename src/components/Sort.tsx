@@ -3,29 +3,33 @@ import React from "react";
 import { SortOrder, sortCharactersByName } from "../utils/sortCharacters";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import { useAppDispatch } from "../redux/reduxHooks";
+import { sortCharacters } from "../redux/characterSlice";
 
 const Sort = () => {
   const [value, setValue] = React.useState('');
-
+  const dispatch = useAppDispatch();
   const state = useSelector((state: RootState) => state.characters);
   const { characters } = state;
 
   const handleChange = (event: SelectChangeEvent) => {
     setValue(event.target.value as string);
-    const sorted = sortCharactersByName(characters, value as SortOrder);
-    console.log(sorted);
+    if (event.target.value) {
+      const sorted = sortCharactersByName(characters, event.target.value as SortOrder);
+      dispatch(sortCharacters(sorted));
+    }
   };
 
   return (
-    <FormControl>
-      <InputLabel>Age</InputLabel>
+    <FormControl sx={{ width: '100px' }}>
+      <InputLabel>Sort</InputLabel>
       <Select
         value={value}
         label="Sort"
         onChange={handleChange}
       >
-        <MenuItem value='descending'>A-Z</MenuItem>
-        <MenuItem value='ascending'>Z-A</MenuItem>
+        <MenuItem value='ascending'>A-Z</MenuItem>
+        <MenuItem value='descending'>Z-A</MenuItem>
       </Select>
     </FormControl>
   )

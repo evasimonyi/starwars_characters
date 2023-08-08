@@ -1,11 +1,6 @@
 import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit';
 import { CharacterType } from '../components/Character.interface';
-
-interface FetchCharactersArgs {
-  urlBase?: string;
-  searchedCharacter?: string;
-  isFiltered?: boolean;
-}
+import { FetchCharactersArgs, SortAction, StateType } from './state.interface';
 
 export const fetchCharacters = createAsyncThunk(
   'get-characters',
@@ -28,21 +23,6 @@ export const fetchCharacters = createAsyncThunk(
     }
   }
 );
-
-export type SortAction = {
-  type: 'charactersSort';
-  payload: CharacterType[];
-};
-
-type StateType = {
-  characters: CharacterType[],
-  count: number,
-  prev: string | null,
-  next: string | null,
-  searchedCharacter: string,
-  isLoading: boolean,
-  error: string,
-}
 
 const initialState: StateType = {
   characters: [],

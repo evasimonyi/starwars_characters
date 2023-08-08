@@ -54,8 +54,20 @@ const App = () => {
           )}
           {!error && (
             <>
-              <Sort />
-              <ResultInfo />
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1em',
+                  marginRight: 'auto',
+                  pl: '4%'
+                }}
+              >
+                {characters.length > 0 && (
+                  <Sort />
+                )}
+                <ResultInfo />
+              </Box>
               <ChatacterList />
             </>
           )}

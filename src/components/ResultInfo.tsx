@@ -7,7 +7,7 @@ const ResultInfo = () => {
   const { isLoading, characters, count } = state;
 
   return (
-    <Box sx={{ marginRight: 'auto', pl: '4%' }}>
+    <>
       {count > 0 && (
         <Typography variant="h5" component="p">
           Showing {characters.length} of {count} {count === 1 ? 'result' : 'results'}
@@ -18,7 +18,7 @@ const ResultInfo = () => {
           No result to show!
         </Typography>
       )}
-    </Box>
+    </>
   )
 }
 

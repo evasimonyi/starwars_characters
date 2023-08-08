@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button, TextField, Box } from '@mui/material';
 import { yellow } from '@mui/material/colors';
 import { useAppDispatch } from '../redux/reduxHooks';
-// import { fetchCharacters, clearCharacters } from '../redux/characterSlice';
+import { fetchCharacters, clearCharacters } from '../redux/characterSlice';
 import { URL } from '../App';
 
 const Search = () => {
@@ -11,12 +11,12 @@ const Search = () => {
   const dispatch = useAppDispatch();
 
   const handleSubmit = () => {
-    // dispatch(clearCharacters());
-    // if (value) {
-    //   dispatch(fetchCharacters({ urlBase: URL, searchedCharacter: value, isFiltered: true }));
-    // } else {
-    //   dispatch(fetchCharacters({ urlBase: URL }));
-    // }
+    dispatch(clearCharacters());
+    if (value) {
+      dispatch(fetchCharacters({ urlBase: URL, searchedCharacter: value, isFiltered: true }));
+    } else {
+      dispatch(fetchCharacters({ urlBase: URL }));
+    }
   };
 
   return (

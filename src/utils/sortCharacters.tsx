@@ -11,16 +11,17 @@ export const sortCharactersByName = (
 ): CharacterType[] => {
   const sortedCharacters = [...characters];
 
-  // sortedCharacters.sort((a, b) => {
-  //   const nameA = a.name.toLowerCase();
-  //   const nameB = b.name.toLowerCase();
+  sortedCharacters.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
 
-  //   if (sortOrder === SortOrder.Ascending) {
-  //     return nameA.localeCompare(nameB);
-  //   } else {
-  //     return nameB.localeCompare(nameA);
-  //   }
-  // });
+    if (sortOrder === SortOrder.Ascending) {
+      return nameA.localeCompare(nameB);
+    } else {
+      return nameB.localeCompare(nameA);
+    }
+  });
 
+  console.log(sortOrder, sortedCharacters);
   return sortedCharacters;
 };

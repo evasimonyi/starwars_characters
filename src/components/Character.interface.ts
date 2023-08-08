@@ -17,3 +17,9 @@ export type CharacterType = {
   url: string,
 }
 
+export type ResultType = {
+  count: number,
+  previous: string | null,
+  next: string | null,
+  results: CharacterType[],
+}

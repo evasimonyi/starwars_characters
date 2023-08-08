@@ -1,16 +1,19 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { CharacterType } from './Character.interface';
+import { grey } from '@mui/material/colors';
 
 const CharacterCard = (props: { character: CharacterType, image: string }) => {
   const { character, image } = props;
   return (
-    <Card sx={{ p: '1em' }}>
+    <Card
+      sx={{
+        p: '1em',
+        backgroundColor: grey[800]
+      }}
+    >
       <CardMedia
         sx={{
           minHeight: 300,

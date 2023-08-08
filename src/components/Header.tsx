@@ -1,10 +1,11 @@
-import { Box, Toolbar, IconButton, Typography, Button } from '@mui/material';
+import { Box, Toolbar, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
+import { grey } from '@mui/material/colors';
 
 const Header = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box>
+      <AppBar position="static" sx={{ backgroundColor: grey[900] }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Star Wars Character Search

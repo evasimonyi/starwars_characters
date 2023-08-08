@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 const { join } = require('path');
 
 module.exports = {
@@ -39,4 +40,10 @@ module.exports = {
       environment: 'production',
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({
+      test: /\.js(\?.*)?$/i,
+    })],
+  },
 };

@@ -63,7 +63,7 @@ const App = () => {
                   pl: '4%'
                 }}
               >
-                {characters.length > 0 && (
+                {characters.length > 1 && (
                   <Sort />
                 )}
                 <ResultInfo />
